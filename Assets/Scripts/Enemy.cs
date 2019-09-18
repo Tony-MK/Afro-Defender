@@ -19,12 +19,15 @@ public class Enemy : MonoBehaviour{
 	}
 	void Update(){
 		if (Vector3.Distance(transform.position,target.position) <= 0.2f){
-			Debug.Log("Enemy has reached Waypoint.\nName: "+target.name+"\nLocation: "+target.position);
+			Log("Arrived at Waypoint: "+target.name+" at Position:"+target.position);
 			GetNextWayPoint();
 		}
 		Move();
 	}
 
+	void Log(string text){
+		//Debug.Log("Enemy["+transform.name+"]: "+text);
+	}
 	void GetNextWayPoint(){
 
 		wavepointIndex++;
@@ -33,7 +36,7 @@ public class Enemy : MonoBehaviour{
 
 		}
 		else if (wavepointIndex == Waypoints.points.Length){
-			Debug.Log("Enemy has peneterated Defence");
+			Log("Peneterated Defence");
 		} 
 	}
  

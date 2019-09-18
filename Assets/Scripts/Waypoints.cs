@@ -5,9 +5,8 @@ public class Waypoints : MonoBehaviour{
 
     void Awake(){
     	points = new Transform[transform.childCount];
-    	for (int i = points.Length-1; i >= 0 ; i--){
-    		points[i] = transform.GetChild(i);
-
+    	for (int index = 0; index < points.Length ; index++){
+    		points[index] = transform.GetChild(index);
     	}
     }
 }
